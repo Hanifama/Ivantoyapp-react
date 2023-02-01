@@ -1,0 +1,94 @@
+.layanan {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px 50px;
+  }
+
+  .layanan .card {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    width: 250px;
+    height: 400px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.01),
+                inset -5px -5px 5px rgba(0, 0, 0, 0.01), 
+                inset 5px 5px 5px rgba(0, 0, 0, 0.02), 
+                inset -5px -5px 5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+    margin: 8px;
+  }
+
+  .layanan h2 {
+    color: var(--dark-blue);
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    align-items: center;
+  }
+
+  .layanan p{
+    color: var(--dark-blue);
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+
+  .layanan .card .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: var(--dark-blue);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  .layanan .card:hover .box {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+    background: linear-gradient(45deg, var(--dark-blue), var(--color-orange));
+  }
+  .layanan .card .box .content {
+    padding: 10px;
+    text-align: center;
+  }
+  .layanan .card .box .content h2 {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 5rem;
+    color: rgba(0, 0, 0, 0.02);
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  .layanan .card:hover .box .content h2 {
+    color: rgba(0, 0, 0, 0.05);
+  }
+  .layanan .card .box .content h3 {
+    font-size: 1.2rem;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  .layanan .card:hover .box .content h3, .layanan .card:hover .box .content p {
+    color: var(--color-white);
+  }
+  .layanan .card .box .content p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+  }
+   
