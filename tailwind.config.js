@@ -55,7 +55,8 @@ module.exports = {
         cartBg: "#282a2c",
         cartItem: "#2e3033",
         cartTotal: "#343739",
-
+        darkBlue : "#000235",
+        btnPrimary : "#7e7ee3",
 
       }
     },

@@ -8,7 +8,7 @@ const Admin = () => {
     const [Items,setItems] = useState([])
     
     const getData = async () => {
-        const foodItemsRef = collection(firestore, 'foodItems')
+        const foodItemsRef = collection(firestore, 'orderItems')
         const foodItemsSnap = await getDocs(foodItemsRef)
 
         console.log(foodItemsSnap)
@@ -36,13 +36,13 @@ const Admin = () => {
                       {items.id}
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      {items.title}
+                      {items.name}
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      {items.calories}
+                      {items.emailName}
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      {items.price}
+                      {items.telpon}
                     </th>
                   </tr>
                 </thead>

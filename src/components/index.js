@@ -11,6 +11,8 @@ export {default as CartContainer} from "./container/CartContainer"
 export {default as CartItem} from "./container/CartItem"
 
 export {default as Admin} from "../pages/admin/Admin"
+export {default as Orders} from "./orders/Orders"
+
 
 
 

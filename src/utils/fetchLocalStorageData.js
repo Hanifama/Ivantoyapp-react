@@ -16,6 +16,7 @@ export const fetchCart = () =>{
     return cartInfo ? cartInfo : [];
 }
 
+
 // export const fetchData = async () => {
     
 //   const [{}, dispatch] = useStateValue

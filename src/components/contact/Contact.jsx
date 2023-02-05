@@ -1,6 +1,4 @@
 import React from 'react'
-import contact from '../../images/contact.svg'
-import './contact.css'
 import { Link } from 'react-router-dom'
 import {AiOutlineMail} from 'react-icons/ai'
 import {SiMinutemailer} from 'react-icons/si'
@@ -13,73 +11,72 @@ import {AiFillFacebook} from 'react-icons/ai'
 
 const Cperson = () => {
   return (
-    <section className="contact">
+    <section className="flex w-full min-h-screen justify-center items-center bg-blue-50">
+        <div className="flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 bg-headingColor w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
+            <div className="flex flex-col space-y-8 justify-between">
 
-        <div className="container contact__container">
-
-            <aside className="contact__aside">
-
-                <div className="aside__image">
-                    <img src={contact} alt="contactperson" />
+                <div className="">
+                    <h1 className='font-semibold text-4xl tracking-wide'>Hubungi Kami</h1>
+                    <p className='pt-2 text-white text-sm mr-[300px]'>
+                        Kami Siap Melayani 24 jam
+                    </p>
                 </div>
 
-                <h2>Contact Us</h2>
-                <p>
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum incidunt sapiente et. Laboriosam beatae facere natus maiores laudantium sed eveniet repellat consequatur, sit itaque delectus aliquid dolorem repudiandae ipsa! Tempora.
-                </p>
+                <div className="flex flex-col space-y-6">
+                    <div className="inline-flex space-x-2 items-center">
+                        <MdOutlineContactPhone className='text-xl mr-2'/> (021) 12345678
+                    </div>
                 
-                <ul className="contact__details">
-                    <li>
-                        <MdOutlineContactPhone/>
-                        <h5>0812345678910</h5>
-                    </li>
-                    <li>
-                        <AiOutlineMail/>
-                        <h5>ClassPPTIK@gmail.com</h5>
-                    </li>
-                    <li>
-                        <SiMinutemailer/>
-                        <h5>12345687424</h5>
-                    </li>
-                </ul>
-
-                <ul className="contact__socials">
-                    <li>
-                    <Link to='/course' className='a'>
-                        <AiFillFacebook/>
-                    </Link>
-                    </li>
-                    <li>
-                    <Link to='/course' className='a'>
-                        <AiFillTwitterSquare/>
-                    </Link>
-                    </li>
-                    <li>
-                    <Link to='/course' className='a'>
-                        <BsYoutube/>
-                    </Link>
-                    </li>
-                    <li>
-                    <Link to='/course' className='a'>
-                        <GrInstagram/>
-                    </Link>
-                    </li>
-                </ul>
-
-            </aside>
-            
-            <form action="https://formspree.io/f/mgeqrvbp" method="post" className="contact__form">
-                <div className="form__name">
-                    <input type="text" name="First Name" placeholder="First Name" required/>
-                    <input type="text" name="Last Name" placeholder="Last Name" required/>
+                    <div className="inline-flex space-x-2 items-center">
+                        <AiOutlineMail className='text-xl mr-2'/> ptlskkbdg@gmail.com
+                    </div>
+                    
+                    <div className="inline-flex space-x-2 items-center">
+                        <SiMinutemailer className='text-xl mr-2'/> 0898987678987
+                    </div>
                 </div>
-                <input type="email" name="Email Address" placeholder="Email you" required/>
-                <textarea name="Message" rows="7" placeholder="Message" required></textarea>
-                <button type="submit" class="btn btn-primary">send</button>
-            </form>
 
-        </div> 
+                <div className="flex space-x-4 text-lg">
+                    <AiFillFacebook/>
+                    <AiFillTwitterSquare/>
+                    <BsYoutube/>
+                    <GrInstagram/>
+                </div>
 
+            </div>
+
+            <div className="">
+                <div className="bg-white rounded-xl shadow-lg p-8 text-textColor">
+                    <form action="" className='flex flex-col space-y-4'>
+                        <div className="">
+                            <label htmlFor="" className='text-sm'>Nama</label>
+                            <input type="text" 
+                            placeholder='Nama' 
+                            className='ring-1 ring-gray-500 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-teal-100'/>
+                        </div>
+                        <div className="">
+                            <label htmlFor="" className='text-sm'>Email</label>
+                        
+                            <input type="email" 
+                            placeholder='Email' 
+                            className='ring-1 ring-gray-500 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-teal-100'/>
+                        </div>
+                        <div className="">
+                            <label htmlFor="" className='text-sm'>Pesan</label>
+                        
+                            <textarea
+                            rows={4}
+                            placeholder='Pesan anda disini ' 
+                            className='ring-1 ring-gray-500 w-full rounded-md px-4 py-2 mt-2 outline-none
+                             focus:ring-2 focus:ring-teal-100'/>
+                        </div>
+
+                        <button className="inline-block self-end bg-headingColor text-white font-bold rounded-lg px-6 py-2 uppercase text-sm">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
     </section>
   )
 }

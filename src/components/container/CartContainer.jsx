@@ -7,6 +7,7 @@ import { useStateValue } from '../../context/StateProvider'
 import { actionType } from '../../context/reducer'
 import NotFound from '../../images/forgot.png'
 import {CartItem} from '../index'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -16,7 +17,11 @@ const CartContainer = () => {
     const [{cartShow,cartItems, user}, dispatch] = useStateValue()
     const [flag, setFlag] = useState(1)
     const [tot, setTot] = useState(0)
+    const navigate = useNavigate()
 
+    const checkoutButton = () => {
+        navigate("/orders")
+    }
 
 
     const hideCart = () => {
@@ -106,23 +111,15 @@ const CartContainer = () => {
                     <p className="text-gray-200 text-xl font-semibold">Rp. {tot + 250}</p>
                 </div>
 
-                {user ? (
                     <motion.button
                     whileTap={{scale : 0.8}}
+                    onClick={checkoutButton}
                     type="button"
                     className='w-full p-2 rounded-full bg-orange-200 text-gray-50 text-lg my-2 hover:shadow-lg '
                     >
                         Check Out
                     </motion.button>
-                ): (
-                    <motion.button
-                whileTap={{scale : 0.8}}
-                type="button"
-                className='w-full p-2 rounded-full bg-orange-200 text-gray-50 text-lg my-2 hover:shadow-lg '
-                >
-                    Login to Check Out
-                </motion.button>
-                )}
+               
             </div>
             </div>
         ) : (

@@ -1,6 +1,6 @@
 import "./index.css";
 //components
-import { Footer, Login, Register, Reset, Layanan, About, Contact, Admin, MainHeader, MainContainer, CreateContainer } from "./components/index";
+import { Footer, Login, Register, Reset, Layanan, About, Contact, Admin, Orders, MainHeader, MainContainer, CreateContainer } from "./components/index";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useStateValue } from "./context/StateProvider";
@@ -45,6 +45,7 @@ const App = () =>{
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/createItem" element={<CreateContainer/>}/>
                     <Route path="/admin" element={<Admin/>}/>
+                    <Route path="/orders" element={<Orders/>}/>
                 </Routes>
             </main>
             {/* <Footer/> */}

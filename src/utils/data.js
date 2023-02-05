@@ -1,8 +1,6 @@
-import { MdOutlineTimer3Select } from 'react-icons/md'
 import T1 from '../images/tekidog.png'
-import T2 from '../images/tekido2.png'
-import T3 from '../images/tekido3.png'
-import T4 from '../images/tekido4.png'
+import layanan from "../images/avatar.png"
+
 
 export const heroData=[
     {
@@ -13,6 +11,33 @@ export const heroData=[
         imageSrc: T1,
     },
     
+]
+
+export const cardLayanan = [
+    {
+        id:1,
+        imageSrc : layanan,
+        title : "Application Development",  
+        desc : "Tim Pengembangan kami adalah platform spesialis yang tidak takut menemukan solusi terbaik untuk setiap kebutuhan bisnis"
+    },
+    {
+        id:2,
+        imageSrc : layanan,
+        title : "Software and Hadware", 
+        desc : "Merupakan layanan perusahaan untuk menyediakan solusi di bidang pengadaan hardware dengan berbagai merk,PC (Personal Computer),monitor,printer,dan lain lain sebagainya"
+    },
+    {
+        id:3,
+        imageSrc : layanan,
+        title : "Business Analytic",
+        desc : "Analysis bisnis mengacu pada keteramilan,teknologi,dan praktik untuk eksplorasi dan penyelidikan berulang yang berkelanjutan dari kinerja bisnis masa lalu untuk mendapatkan wawasan dan mendorong perencanaan bisnis"
+    },
+    {
+        id:4,
+        imageSrc : layanan,
+        title : "Bengkel Teknik",
+        desc : "Tim kami yang mengacu pada bidang mengeksplor dan implementasi hasil pengamatan atau request dan client kami."
+    }
 ]
 
 export const categories = [

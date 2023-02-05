@@ -7,11 +7,11 @@ const cartInfo = fetchCart()
 
 export const initialState = {
     user:userInfo,
+    foodItems : null,
+    cartShow : false,
+    cartItems : cartInfo,
     isLoggedIn: false,
     email:null,
     useName:null,
     userID:null,
-    foodItems : null,
-    cartShow : false,
-    cartItems : cartInfo,
 }
