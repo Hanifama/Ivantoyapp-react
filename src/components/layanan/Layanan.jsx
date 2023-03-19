@@ -1,9 +1,13 @@
 import React from 'react'
 import { cardLayanan } from '../../utils/data'
+import MainHeader from '../header/MainHeader'
 
 const Layanan = () => {
   return (
-    <section className="w-full bg-headingColor text-white">
+    <section>
+    <MainHeader/>
+    <main className="mt-14 md:mt-20 px-4 md:px-16 py-4 w-full">
+    <div className="w-full bg-headingColor text-white">
       <div className="text-center py-10">
         <h5 className="text-4xl w-98 mx-auto leading-normal">Layanan</h5>
         <h1 className="font-semibold mb-12">Kami Melayani</h1>
@@ -22,7 +26,12 @@ const Layanan = () => {
 
         </div>
       </div>
-    </section>
+    </div>
+    </main>
+    
+  </section>
+
+    
   )
 }
 

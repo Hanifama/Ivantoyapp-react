@@ -10,7 +10,8 @@ export {default as MenuContainer} from "./container/MenuContainer"
 export {default as CartContainer} from "./container/CartContainer"
 export {default as CartItem} from "./container/CartItem"
 
-export {default as Admin} from "../pages/admin/Admin"
+// export {default as Admin} from "../pages/admon/Admin"
+
 export {default as Orders} from "./orders/Orders"
 
 
@@ -27,7 +28,18 @@ export {default as Login} from "./auth/Login"
 export {default as Register} from "./auth/Register"
 export {default as Reset} from "./auth/Reset"
 
-// export {defaullt as FaEye, FaEyeSlash} from 'react-icons/fa'
+// admin
+export {default as Chart} from "./chart/Chart"
+export {default as Datatable} from "./datatable/Datatable"
+export {default as Featured} from "./featured/Featured"
+export {default as Navbar} from "./navbar/Navbar"
+export {default as Sidebar} from "./sidebar/Sidebar"
+export {default as Table} from "./table/Table"
+export {default as Widget} from "./widget/Widget"
+
+
+
+
 
 
 

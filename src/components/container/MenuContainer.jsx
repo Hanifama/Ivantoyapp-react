@@ -31,12 +31,12 @@ const MenuContainer = () => {
                     whileTap={{scale : 0.6 }}
                     key={category.id} 
                     onClick = {() => setFilter(category.urlParamName)}
-                    className={`"group ${filter === category.urlParamName ? 'bg-card' : 'bg-headingColor'} "w-[10rem] min-w-[94px] h-28 cursor-pointer rounded-lg 
+                    className={`"group ${filter === category.urlParamName ? 'bg-card' : 'bg-headingColor'} " w-full h-28 cursor-pointer rounded-lg 
                     drop-shadow-xl flex flex-col gap-3 items-center justify-center hover:bg-card"`}>
                         <div className={`w-10 h-10 rounded-full shadow-lg ${filter === category.urlParamName ? 'bg-headingColor' : 'bg-cardOverlay'} group-hover:bg-headingColor flex items-center justify-center`}>
                             <MdOpenInNewOff className={`${filter === category.urlParamName ? 'text-black' : 'text-textColor'} group-hover:text-black text-lg`}/>
                         </div>
-                        <p className={`text-sm ${filter === category.urlParamName ? 'text-black' : 'text-textColor'}group-hover:text-black`}>{category.name}</p>
+                        <p className={`text-sm ${filter === category.urlParamName ? 'text-red-200' : 'text-textColor'}group-hover:text-black `}>{category.name}</p>
                     </motion.div>
                 ))}               
             </div>

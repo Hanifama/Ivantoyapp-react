@@ -7,11 +7,15 @@ import {GrInstagram} from 'react-icons/gr'
 import {BsYoutube} from 'react-icons/bs'
 import {AiFillTwitterSquare} from 'react-icons/ai'
 import {AiFillFacebook} from 'react-icons/ai'
+import MainHeader from '../header/MainHeader'
 
 
 const Cperson = () => {
   return (
-    <section className="flex w-full min-h-screen justify-center items-center bg-blue-50">
+    <section>
+    <MainHeader/>
+    <main className="mt-14 md:mt-20 px-4 md:px-16 py-4 w-full">
+     <div className="flex w-full min-h-screen justify-center items-center bg-blue-50">
         <div className="flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 bg-headingColor w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
             <div className="flex flex-col space-y-8 justify-between">
 
@@ -77,7 +81,13 @@ const Cperson = () => {
             </div>
 
         </div>
-    </section>
+     </div>
+    </main>
+    
+  </section>
+
+
+    
   )
 }
 

@@ -5,7 +5,7 @@ import layanan from "../images/avatar.png"
 export const heroData=[
     {
         id:1,
-        name:"Tekido 1",
+        name:"Tekido Smart",
         descp:"Smart System Home",
         price:"4.000.000",
         imageSrc: T1,

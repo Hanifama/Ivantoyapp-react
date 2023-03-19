@@ -27,16 +27,13 @@ const Orders = () => {
     const [name,setName] = useState("");
     const [emailName,setEmailName] = useState("");
     const [telpon,setTelpon] = useState("");
-    const [harga,setHarga] = useState("");
-    const [barang,setBarang] = useState("");
-    const [total,setTotal] = useState("");
-    const [subTotal,setSubTotal] = useState("");
+    
     const [fields,setFields] = useState(false);
     
     const [alertStatus,setAlertStatus] = useState('danger');
     const [msg,setMsg] = useState(null);
     const [isLoading,setIsLoading] = useState(false);
-    const Order = useState([barang, harga, total, subTotal])
+
 
     const [flag, setFlag] = useState(1)
     const [tot, setTot] = useState(0)
@@ -45,10 +42,10 @@ const Orders = () => {
     const [{orderItems, cartItems}, dispatch] = useStateValue()
 
     
-    const saveDetails = () => {
+    const orderSave = () => {
         setIsLoading(true)
         try{
-            if(!name|| !emailName || !telpon ||!barang ||!harga ||!total ||!subTotal){
+            if(!name|| !emailName || !telpon ||!cartItems.length){
                 setFields(true);
                 setMsg('request anda gagal coba lagi!!');
                 setAlertStatus('danger')
@@ -56,16 +53,14 @@ const Orders = () => {
                     setFields(false)
                     setIsLoading(false)
                 },4000)
+                
             }else{
                 const order = {
                     id : `${Date.now()}`,
                     name : name,
                     emailName : emailName,
                     telpon : telpon,
-                    barang : barang,
-                    harga : harga,
-                    total : total,
-                    SubTotal : subTotal,
+                    cartItems : cartItems.length
                 }
                 saveOrder(order)
                 setIsLoading(false)
@@ -96,7 +91,7 @@ const Orders = () => {
         setName("")
         setEmailName("")
         setTelpon("")
-        cartItems("")
+        cartItems([]);
     }
 
     const fetchDataOrders = async () => {
@@ -172,43 +167,23 @@ const Orders = () => {
                     {cartItems && cartItems.length > 0 && 
                     cartItems.map((item) => (
 
-                            <div className="w-full flex items-center justify-between">
-
-                                <input type="hidden" 
-                                value={item?.title}
-                                onChange={(e)=> setBarang(e.target.value)}
-                                />
-
-                                <input type="hidden"
-                                value={item?.price} 
-                                onChange={(e)=> setHarga(e.target.value)}
-                                />
-
-                                <input type="hidden"
-                               value={item?.qty * item?.price} 
-                               onChange={(e)=> setTotal(e.target.value)}
-                                />
-
-                                <input type="hidden"
-                               value={tot + 1000000} 
-                               onChange={(e)=> setSubTotal(e.target.value)}
-                                />
+                            <div key={item?.id} className="w-full flex items-center justify-between">
 
                                 <label 
-                                className="text-red-400 items-center text-lg"
-                                >{item?.title}</label>
+                                className="text-red-400 items-center text-lg p-1"
+                                >{item.title}</label>
 
                                 <label 
-                                className="text-red-400 items-center text-lg"
-                                >{item?.price}</label>
+                                className="text-red-400 items-center text-lg p-1"
+                                >{item.price}</label>
                                
                                <label
-                               className="text-red-400 items-center text-lg"
-                               >{item?.qty}</label>
+                               className="text-red-400 items-center text-lg p-1"
+                               >{item.qty}</label>
 
                                <label
-                               className="text-red-400 items-center text-lg"
-                               >{item?.qty * item?.price}</label>
+                               className="text-red-400 items-center text-lg p-1"
+                               >{item.qty * item?.price}</label>
 
                             </div>
                 
@@ -225,15 +200,15 @@ const Orders = () => {
                 </div>
 
                 <div className="w-full flex items-center justify-between">
-                    <p className="text-gray-500 text-lg">Jasa</p>
-                    <p className="text-gray-500 text-lg">Rp. 10000000</p>
+                    <p className="text-gray-500 text-lg">Discount</p>
+                    <p className="text-gray-500 text-lg">20%</p>
                 </div>
 
                 <div className="w-full border-b border-gray-600 my-2"></div>
 
                 <div className="w-full flex items-center justify-between">
                     <p className="text-gray-700 text-xl font-semibold">Total</p>
-                    <p className="text-gray-700 text-xl font-semibold">Rp.  {tot + 1000000}</p>
+                    <p className="text-gray-700 text-xl font-semibold">Rp{tot * (20 / 100)}</p>
                 </div>
 
             </div>
@@ -279,9 +254,9 @@ const Orders = () => {
                 <button type="button" 
                 className="ml-0 md:ml-auto w-full md:w-auto border-none outline-none
                  bg-emerald-500 px-2 py-2 rounded-lg text-lg text-white font-semibold"
-                onClick={saveDetails}
+                onClick={orderSave}
                 >
-                    Save
+                    Order
                 </button>
             </div>               
 
